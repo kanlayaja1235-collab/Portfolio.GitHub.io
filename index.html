@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio | นายอนุวัฒน์ สุวรรณฤทธิ</title>
+<title>Portfolio | นายอนุวัฒน์ สุวรรณฤทธิ์</title>
 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -73,6 +73,7 @@ a {
 
 .nav-links a:hover {
   color:var(--gold);
+  transition: color 0.3s ease;
 }
 
 .hero {
@@ -116,15 +117,14 @@ a {
   z-index:1;
 }
 
-/* ปรับแต่งส่วนรูปโปรไฟล์วงกลมแทนวงกลม AW เดิม */
 .profile-container {
-  width:140px;
-  height:140px;
+  width:160px;
+  height:160px;
   margin:0 auto 25px;
-  border:2px solid var(--gold);
+  border:3px solid var(--gold);
   border-radius:50%;
   overflow:hidden;
-  box-shadow:0 0 20px rgba(215,173,97,.3);
+  box-shadow:0 0 25px rgba(215,173,97,.4);
   display:block;
 }
 
@@ -266,18 +266,33 @@ a {
   color:var(--muted);
 }
 
+/* ปรับแต่งการแสดงผลส่วนกิจกรรมและการใส่รูปภาพ */
 .activity-grid {
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:18px;
+  gap:22px;
 }
 
 .activity {
   background:white;
-  padding:22px;
+  padding:0;
   border-radius:16px;
   box-shadow:var(--shadow);
   border-top:3px solid var(--gold);
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+
+.activity-img {
+  width:100%;
+  height:200px;
+  object-fit:cover;
+}
+
+.activity-body {
+  padding:22px;
+  flex-grow:1;
 }
 
 .activity .number {
@@ -292,4 +307,157 @@ a {
 }
 
 .activity p {
-  margin
+  margin:0;
+  color:var(--muted);
+  font-size:0.95rem;
+}
+
+/* Footer Section */
+footer {
+  background:var(--navy);
+  color:white;
+  padding:50px 22px;
+  text-align:center;
+}
+
+footer p {
+  margin:5px 0;
+  color:#a0aec0;
+}
+
+/* Responsive Support */
+@media (max-width: 768px) {
+  .grid, .activity-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="brand">ANUWAT PORTFOLIO</div>
+      <div class="nav-links">
+        <a href="#about">เกี่ยวกับฉัน</a>
+        <a href="#education">การศึกษา</a>
+        <a href="#activities">กิจกรรม</a>
+        <a href="#contact">ติดต่อ</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <div class="profile-container">
+        <!-- เปลี่ยน URL รูปโปรไฟล์ของคุณที่นี่ -->
+        <img src="https://via.placeholder.com/160" alt="นายอนุวัฒน์ สุวรรณฤทธิ์" class="profile-img">
+      </div>
+      <div class="eyebrow">PORTFOLIO</div>
+      <h1>นายอนุวัฒน์ สุวรรณฤทธิ์</h1>
+      <p>มุ่งมั่น เรียนรู้ และพัฒนาศักยภาพเพื่อสร้างสรรค์ผลงานอย่างมีคุณภาพ</p>
+      <div class="goal">เป้าหมาย: พัฒนาตนเองอย่างต่อเนื่องสู่ความสำเร็จ</div>
+    </div>
+  </header>
+
+  <main class="container">
+    
+    <!-- About Section -->
+    <section id="about" style="margin-bottom: 60px;">
+      <div class="section-head">
+        <div class="eyebrow">ABOUT ME</div>
+        <h2>ข้อมูลส่วนตัว</h2>
+        <p>ประวัติและข้อมูลเบื้องต้นเกี่ยวกับตัวฉัน</p>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>ประวัติส่วนตัว</h3>
+          <dl class="profile-list">
+            <dt>ชื่อ-นามสกุล:</dt>
+            <dd>นายอนุวัฒน์ สุวรรณฤทธิ์</dd>
+            <dt>ชื่อเล่น:</dt>
+            <dd>-[ระบุชื่อเล่น]-</dd>
+            <dt>วันเกิด:</dt>
+            <dd>-[ระบุวันเกิด]-</dd>
+            <dt>สัญชาติ/เชื้อชาติ:</dt>
+            <dd>ไทย / ไทย</dd>
+          </dl>
+        </div>
+
+        <div class="card">
+          <h3>ทักษะและความสามารถ</h3>
+          <p>• ความสามารถในการแก้ไขปัญหาและคิดวิเคราะห์</p>
+          <p>• การทำงานร่วมกับผู้อื่นและการสื่อสาร</p>
+          <p>• การปรับตัวและเรียนรู้สิ่งใหม่ๆ ได้อย่างรวดเร็ว</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" style="margin-bottom: 60px;">
+      <div class="section-head">
+        <div class="eyebrow">EDUCATION</div>
+        <h2>ประวัติการศึกษา</h2>
+      </div>
+
+      <div class="card">
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>ระดับการศึกษาสูงสุด / ปัจจุบัน</h3>
+            <p>ชื่อสถานศึกษา | คณะ/สาขาวิชา (ปีการศึกษา)</p>
+          </div>
+          <div class="timeline-item">
+            <h3>ระดับมัธยมศึกษา</h3>
+            <p>ชื่อโรงเรียน | สายการเรียน (ปีการศึกษา)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Activities & Gallery Section -->
+    <section id="activities">
+      <div class="section-head">
+        <div class="eyebrow">ACTIVITIES & PROJECTS</div>
+        <h2>กิจกรรมและผลงาน</h2>
+        <p>กิจกรรมที่เคยเข้าร่วมและผลงานที่ภาคภูมิใจ</p>
+      </div>
+
+      <div class="activity-grid">
+        <!-- กิจกรรมที่ 1 -->
+        <div class="activity">
+          <!-- เปลี่ยน src รูปภาพกิจกรรมที่ 1 ที่นี่ -->
+          <img src="https://via.placeholder.com/600x400" alt="กิจกรรมที่ 1" class="activity-img">
+          <div class="activity-body">
+            <div class="number">ACTIVITY 01</div>
+            <h3>ชื่อกิจกรรมหรือโครงการที่ 1</h3>
+            <p>รายละเอียดกิจกรรม สรุปบทบาทหน้าที่ และสิ่งที่ได้เรียนรู้จากการเข้าร่วมกิจกรรมนี้</p>
+          </div>
+        </div>
+
+        <!-- กิจกรรมที่ 2 -->
+        <div class="activity">
+          <!-- เปลี่ยน src รูปภาพกิจกรรมที่ 2 ที่นี่ -->
+          <img src="https://via.placeholder.com/600x400" alt="กิจกรรมที่ 2" class="activity-img">
+          <div class="activity-body">
+            <div class="number">ACTIVITY 02</div>
+            <h3>ชื่อกิจกรรมหรือโครงการที่ 2</h3>
+            <p>รายละเอียดกิจกรรม สรุปบทบาทหน้าที่ และสิ่งที่ได้เรียนรู้จากการเข้าร่วมกิจกรรมนี้</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer / Contact -->
+  <footer id="contact">
+    <h3>ช่องทางการติดต่อ</h3>
+    <p>อีเมล: example@email.com | เบอร์โทรศัพท์: 08X-XXX-XXXX</p>
+    <p style="margin-top:20px; font-size: 0.85rem; opacity: 0.7;">&copy; 2026 นายอนุวัฒน์ สุวรรณฤทธิ์. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
