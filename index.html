@@ -1,0 +1,530 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio | นายอนุวัฒน์ สุวรรณฤทธิ</title>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --navy:#10233f;
+  --blue:#1d4778;
+  --gold:#d7ad61;
+  --cream:#f7f5f0;
+  --ink:#243247;
+  --muted:#68778a;
+  --white:#fff;
+  --shadow:0 18px 50px rgba(16,35,63,.10);
+}
+
+* {
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body {
+  margin:0;
+  color:var(--ink);
+  background:var(--cream);
+  font-family:"Sarabun",sans-serif;
+  line-height:1.75;
+}
+
+h1,h2,h3,.brand,.eyebrow {
+  font-family:"Kanit",sans-serif;
+}
+
+a {
+  color:inherit;
+  text-decoration:none;
+}
+
+.nav {
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:rgba(16,35,63,.96);
+  color:white;
+  backdrop-filter:blur(12px);
+}
+
+.nav-inner {
+  max-width:1120px;
+  margin:auto;
+  padding:12px 22px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:18px;
+}
+
+.brand {
+  font-weight:600;
+  letter-spacing:.4px;
+}
+
+.nav-links {
+  display:flex;
+  flex-wrap:wrap;
+  gap:18px;
+  font-size:.92rem;
+}
+
+.nav-links a:hover {
+  color:var(--gold);
+}
+
+.hero {
+  min-height:610px;
+  padding:90px 22px;
+  color:white;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  background:
+    radial-gradient(circle at 80% 15%,rgba(215,173,97,.22),transparent 27%),
+    linear-gradient(135deg,#0c1b31 0%,#173b65 58%,#10233f 100%);
+  position:relative;
+  overflow:hidden;
+}
+
+.hero:before,.hero:after {
+  content:"";
+  position:absolute;
+  border:1px solid rgba(215,173,97,.28);
+  border-radius:50%;
+  width:420px;
+  height:420px;
+}
+
+.hero:before {
+  left:-230px;
+  bottom:-230px;
+}
+
+.hero:after {
+  right:-240px;
+  top:-250px;
+  width:520px;
+  height:520px;
+}
+
+.hero-content {
+  max-width:820px;
+  position:relative;
+  z-index:1;
+}
+
+.monogram {
+  width:112px;
+  height:112px;
+  margin:0 auto 25px;
+  border:2px solid var(--gold);
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  color:var(--gold);
+  font:600 2.2rem "Kanit";
+  letter-spacing:2px;
+}
+
+.eyebrow {
+  color:var(--gold);
+  letter-spacing:3px;
+  font-size:.9rem;
+}
+
+.hero h1 {
+  font-size:clamp(2.2rem,6vw,4.2rem);
+  line-height:1.25;
+  margin:12px 0;
+}
+
+.hero p {
+  color:#e1e8f1;
+  font-size:1.12rem;
+}
+
+.hero .goal {
+  display:inline-block;
+  margin-top:24px;
+  padding:10px 22px;
+  border:1px solid rgba(215,173,97,.7);
+  border-radius:30px;
+  color:#f3d9a8;
+}
+
+.container {
+  max-width:1080px;
+  margin:auto;
+  padding:76px 22px;
+}
+
+.section-head {
+  margin-bottom:30px;
+}
+
+.section-head .eyebrow {
+  color:#a77c36;
+  letter-spacing:2px;
+}
+
+.section-head h2 {
+  color:var(--navy);
+  font-size:clamp(1.8rem,4vw,2.5rem);
+  margin:3px 0 8px;
+}
+
+.section-head p {
+  color:var(--muted);
+}
+
+.grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:22px;
+}
+
+.card {
+  background:white;
+  border-radius:18px;
+  padding:25px;
+  box-shadow:var(--shadow);
+  border:1px solid #ece8df;
+}
+
+.card h3 {
+  color:var(--blue);
+  margin:0 0 12px;
+}
+
+.profile-list {
+  display:grid;
+  grid-template-columns:130px 1fr;
+  gap:7px 12px;
+}
+
+.profile-list dt {
+  color:var(--muted);
+}
+
+.profile-list dd {
+  margin:0;
+  font-weight:500;
+}
+
+.quote {
+  background:var(--navy);
+  color:white;
+  border-left:5px solid var(--gold);
+  border-radius:16px;
+  padding:25px 28px;
+  font-size:1.2rem;
+}
+
+.quote strong {
+  color:#f0cf91;
+}
+
+.timeline {
+  position:relative;
+  margin-left:10px;
+  padding-left:28px;
+  border-left:2px solid #d9c49e;
+}
+
+.timeline-item {
+  position:relative;
+  margin:0 0 22px;
+}
+
+.timeline-item:before {
+  content:"";
+  position:absolute;
+  left:-36px;
+  top:8px;
+  width:14px;
+  height:14px;
+  border-radius:50%;
+  background:var(--gold);
+  border:3px solid var(--cream);
+}
+
+.timeline-item h3 {
+  margin:0;
+  color:var(--blue);
+}
+
+.timeline-item p {
+  margin:3px 0 0;
+  color:var(--muted);
+}
+
+.activity-grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+}
+
+.activity {
+  background:white;
+  padding:22px;
+  border-radius:16px;
+  box-shadow:var(--shadow);
+  border-top:3px solid var(--gold);
+}
+
+.activity .number {
+  color:#a77c36;
+  font:600 1rem "Kanit";
+}
+
+.activity h3 {
+  margin:4px 0 8px;
+  color:var(--navy);
+  font-size:1.1rem;
+}
+
+.activity p {
+  margin:0;
+  color:var(--muted);
+}
+
+.cert-grid {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:16px;
+}
+
+.cert {
+  display:flex;
+  gap:15px;
+  align-items:flex-start;
+  background:white;
+  padding:19px;
+  border-radius:15px;
+  box-shadow:var(--shadow);
+}
+
+.cert-icon {
+  flex:0 0 42px;
+  height:42px;
+  border-radius:12px;
+  display:grid;
+  place-items:center;
+  background:#f5ead5;
+  color:#9a6b24;
+  font-size:1.2rem;
+}
+
+.cert h3 {
+  margin:0 0 4px;
+  color:var(--blue);
+  font-size:1rem;
+}
+
+.cert p {
+  margin:0;
+  color:var(--muted);
+  font-size:.94rem;
+}
+
+.statement {
+  font-size:1.05rem;
+}
+
+.footer {
+  background:var(--navy);
+  color:white;
+  text-align:center;
+  padding:52px 22px;
+}
+
+.footer h2 {
+  color:var(--gold);
+  font-size:2rem;
+}
+
+.footer p {
+  color:#d9e2ed;
+}
+
+.small-note {
+  color:#7c8795;
+  font-size:.85rem;
+  margin-top:18px;
+}
+
+.top-link {
+  display:inline-block;
+  margin-top:18px;
+  color:#f0cf91;
+  border:1px solid #9c804e;
+  border-radius:24px;
+  padding:7px 18px;
+}
+
+@media(max-width:700px) {
+  .nav-inner {
+    align-items:flex-start;
+    flex-direction:column;
+  }
+
+  .nav-links {
+    gap:12px;
+    font-size:.84rem;
+  }
+
+  .hero {
+    min-height:540px;
+    padding:70px 18px;
+  }
+
+  .container {
+    padding:55px 18px;
+  }
+
+  .grid,.activity-grid,.cert-grid {
+    grid-template-columns:1fr;
+  }
+
+  .profile-list {
+    grid-template-columns:110px 1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="brand">ANUWAT · PORTFOLIO</div>
+    <div class="nav-links">
+      <a href="#about">ประวัติ</a>
+      <a href="#education">การศึกษา</a>
+      <a href="#activities">กิจกรรม</a>
+      <a href="#certificates">เกียรติบัตร</a>
+      <a href="#goal">เป้าหมาย</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-content">
+    <div class="monogram">AW</div>
+    <div class="eyebrow">แฟ้มสะสมผลงาน · Portfolio</div>
+    <h1>นายอนุวัฒน์ สุวรรณฤทธิ</h1>
+    <p>โรงเรียนทุ่งใหญ่เฉลิมราชอนุสรณ์ รัชมังคลาภิเษก</p>
+    <p>มุ่งมั่นสู่เส้นทางครูคณิตศาสตร์</p>
+    <div class="goal">
+      คณะครุศาสตร์ · สาขาคณิตศาสตร์<br>
+      มหาวิทยาลัยราชภัฏสุราษฎร์ธานี
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="container" id="about">
+  <div class="section-head">
+    <div class="eyebrow">01 · Profile</div>
+    <h2>ประวัติส่วนตัว</h2>
+    <p>ข้อมูลเบื้องต้นและความสนใจของข้าพเจ้า</p>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h3>ข้อมูลส่วนบุคคล</h3>
+      <dl class="profile-list">
+        <dt>ชื่อ–นามสกุล</dt><dd>นายอนุวัฒน์ สุวรรณฤทธิ</dd>
+        <dt>ชื่อภาษาอังกฤษ</dt><dd>Anuwat Suwanrit</dd>
+        <dt>ชื่อเล่น</dt><dd>อ๊อฟ</dd>
+        <dt>วันเกิด</dt><dd>21 ธันวาคม 2551</dd>
+        <dt>เชื้อชาติ</dt><dd>ไทย</dd>
+        <dt>สัญชาติ</dt><dd>ไทย</dd>
+        <dt>ศาสนา</dt><dd>พุทธ</dd>
+        <dt>แผนการเรียน</dt><dd>วิทยาศาสตร์–คณิตศาสตร์</dd>
+        <dt>สถานศึกษา</dt><dd>โรงเรียนทุ่งใหญ่เฉลิมราชอนุสรณ์ รัชมังคลาภิเษก</dd>
+      </dl>
+    </div>
+
+    <div class="card">
+      <h3>ความสนใจและแรงบันดาลใจ</h3>
+      <p class="statement">
+        ข้าพเจ้ามีความสนใจในวิชาคณิตศาสตร์มาตั้งแต่ระดับประถมศึกษา
+        และมีความมุ่งมั่นที่จะพัฒนาตนเองเพื่อก้าวสู่อาชีพครูคณิตศาสตร์
+        โดยเชื่อว่าครูที่ดีควรถ่ายทอดทั้งความรู้และคุณธรรม
+        พร้อมช่วยให้นักเรียนค้นพบความสามารถของตนเอง
+      </p>
+      <div class="quote">“ทำวันนี้ให้ดีที่สุด”</div>
+    </div>
+  </div>
+</section>
+
+<section class="container" id="education">
+  <div class="section-head">
+    <div class="eyebrow">02 · Education</div>
+    <h2>ประวัติการศึกษา</h2>
+    <p>เส้นทางการเรียนรู้ตั้งแต่ระดับอนุบาลจนถึงมัธยมศึกษาตอนปลาย</p>
+  </div>
+
+  <div class="card">
+    <div class="timeline">
+      <div class="timeline-item">
+        <h3>ระดับอนุบาลศึกษา</h3>
+        <p>โรงเรียนบ้านควนสินชัย</p>
+      </div>
+      <div class="timeline-item">
+        <h3>ระดับประถมศึกษา</h3>
+        <p>โรงเรียนบ้านบางรูป</p>
+      </div>
+      <div class="timeline-item">
+        <h3>ระดับมัธยมศึกษาตอนต้น</h3>
+        <p>โรงเรียนทุ่งใหญ่เฉลิมราชอนุสรณ์ รัชมังคลาภิเษก</p>
+      </div>
+      <div class="timeline-item">
+        <h3>ระดับมัธยมศึกษาตอนปลาย</h3>
+        <p>โรงเรียนทุ่งใหญ่เฉลิมราชอนุสรณ์ รัชมังคลาภิเษก</p>
+      </div>
+    </div>
+
+    <div class="quote" style="margin-top:25px">
+      ผลการเรียนเฉลี่ย <strong>3.41</strong>
+      <span style="font-size:.9rem;color:#d9e2ed">(4 ภาคเรียน)</span>
+    </div>
+  </div>
+</section>
+
+<section class="container" id="activities">
+  <div class="section-head">
+    <div class="eyebrow">03 · Activities</div>
+    <h2>กิจกรรมที่เข้าร่วม</h2>
+    <p>ประสบการณ์ที่ช่วยพัฒนาความรับผิดชอบ การทำงานเป็นทีม และจิตสาธารณะ</p>
+  </div>
+
+  <div class="activity-grid">
+    <article class="activity">
+      <div class="number">ACTIVITY 01</div>
+      <h3>จิตอาสาปลูกป่าชายเลน</h3>
+      <p>ร่วมอนุรักษ์สิ่งแวดล้อมชายฝั่ง เรียนรู้การทำงานร่วมกับเพื่อน และการฟื้นฟูระบบนิเวศ</p>
+    </article>
+
+    <article class="activity">
+      <div class="number">ACTIVITY 02</div>
+      <h3>ตัวแทนถือพานวันไหว้ครู</h3>
+      <p>ได้รับคัดเลือกเป็นตัวแทนนักเรียนชั้น ม.5/1 ในปีการศึกษา 2568</p>
+    </article>
+
+    <article class="activity">
+      <div class="number">ACTIVITY 03</div>
+      <h3>ต้อนรับคณะกรรมการและแขกผู้มาเยือน</h3>
+      <p>เป็นตัวแทนนักเรียนต้อนรับคณะกรรมการนิเทศและประเมิน OBECQA รวมถึงกิจกรรมวันสถาปนาโรงเรียน</p>
+    </article>
+
+    <article class="activity">
+      <div class="number">ACTIVITY 04</div>
+      <h3>ตัวแทนถือเครื่องสูง · ทุ่งใหญ่เกมส์</h3>
+      <p>ได้รับคัดเลือกเป็นตัวแทนนักเรียนตำบลทุ่งใหญ่ ในการแข่งขันกีฬาอำเภอ
