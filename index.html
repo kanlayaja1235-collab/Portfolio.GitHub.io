@@ -2,462 +2,428 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio | นายอนุวัฒน์ สุวรรณฤทธิ์</title>
-<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio | Anuwat Suwanrit</title>
 
 <style>
 :root {
-  --navy:#10233f;
-  --blue:#1d4778;
-  --gold:#d7ad61;
-  --cream:#f7f5f0;
-  --ink:#243247;
-  --muted:#68778a;
-  --white:#fff;
-  --shadow:0 18px 50px rgba(16,35,63,.10);
+--ink:#18243b;
+--muted:#667085;
+--accent:#397b78;
+--paper:#fff;
+--bg:#f4f7f8;
 }
 
-* {
-  box-sizing:border-box;
-  scroll-behavior:smooth;
+*{box-sizing:border-box}
+
+html{scroll-behavior:smooth}
+
+body{
+margin:0;
+background:var(--bg);
+color:var(--ink);
+font-family:Tahoma,sans-serif;
+line-height:1.8;
 }
 
-body {
-  margin:0;
-  color:var(--ink);
-  background:var(--cream);
-  font-family:"Sarabun",sans-serif;
-  line-height:1.75;
+header{
+position:sticky;
+top:0;
+z-index:10;
+background:white;
+border-bottom:1px solid #ddd;
 }
 
-h1,h2,h3,.brand,.eyebrow {
-  font-family:"Kanit",sans-serif;
+nav{
+max-width:1100px;
+margin:auto;
+padding:15px;
+display:flex;
+gap:20px;
+overflow-x:auto;
+white-space:nowrap;
 }
 
-a {
-  color:inherit;
-  text-decoration:none;
+nav a{
+color:var(--ink);
+text-decoration:none;
+font-weight:bold;
 }
 
-.nav {
-  position:sticky;
-  top:0;
-  z-index:10;
-  background:rgba(16,35,63,.96);
-  color:white;
-  backdrop-filter:blur(12px);
+nav a:hover{color:var(--accent)}
+
+.hero{
+min-height:75vh;
+padding:80px 20px;
+display:grid;
+place-items:center;
+text-align:center;
+background:linear-gradient(135deg,#e7f0ef,#f7f4ee);
 }
 
-.nav-inner {
-  max-width:1120px;
-  margin:auto;
-  padding:12px 22px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:18px;
+.hero h1{
+font-size:clamp(35px,7vw,65px);
+color:#1b3444;
 }
 
-.brand {
-  font-weight:600;
-  letter-spacing:.4px;
+.hero p{font-size:18px}
+
+.eyebrow{
+color:var(--accent);
+letter-spacing:4px;
+font-weight:bold;
 }
 
-.nav-links {
-  display:flex;
-  flex-wrap:wrap;
-  gap:18px;
-  font-size:.92rem;
+main{
+max-width:1100px;
+margin:auto;
+padding:35px 20px;
 }
 
-.nav-links a:hover {
-  color:var(--gold);
-  transition: color 0.3s ease;
+section{
+margin:50px 0;
+scroll-margin-top:80px;
 }
 
-.hero {
-  min-height:610px;
-  padding:90px 22px;
-  color:white;
-  display:grid;
-  place-items:center;
-  text-align:center;
-  background:
-    radial-gradient(circle at 80% 15%,rgba(215,173,97,.22),transparent 27%),
-    linear-gradient(135deg,#0c1b31 0%,#173b65 58%,#10233f 100%);
-  position:relative;
-  overflow:hidden;
+h2{color:var(--accent)}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
 }
 
-.hero:before,.hero:after {
-  content:"";
-  position:absolute;
-  border:1px solid rgba(215,173,97,.28);
-  border-radius:50%;
-  width:420px;
-  height:420px;
+.card{
+background:white;
+padding:25px;
+border-radius:18px;
+box-shadow:0 5px 20px #00000010;
+margin-bottom:15px;
 }
 
-.hero:before {
-  left:-230px;
-  bottom:-230px;
+.card h3{color:#397b78}
+
+.card p{
+color:#4d5969;
+margin:8px 0;
 }
 
-.hero:after {
-  right:-240px;
-  top:-250px;
-  width:520px;
-  height:520px;
+footer{
+background:#1b3444;
+color:white;
+text-align:center;
+padding:35px;
+margin-top:50px;
 }
 
-.hero-content {
-  max-width:820px;
-  position:relative;
-  z-index:1;
-}
+footer p{color:white}
 
-.profile-container {
-  width:160px;
-  height:160px;
-  margin:0 auto 25px;
-  border:3px solid var(--gold);
-  border-radius:50%;
-  overflow:hidden;
-  box-shadow:0 0 25px rgba(215,173,97,.4);
-  display:block;
-}
-
-.profile-img {
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-.eyebrow {
-  color:var(--gold);
-  letter-spacing:3px;
-  font-size:.9rem;
-}
-
-.hero h1 {
-  font-size:clamp(2.2rem,6vw,4.2rem);
-  line-height:1.25;
-  margin:12px 0;
-}
-
-.hero p {
-  color:#e1e8f1;
-  font-size:1.12rem;
-}
-
-.hero .goal {
-  display:inline-block;
-  margin-top:24px;
-  padding:10px 22px;
-  border:1px solid rgba(215,173,97,.7);
-  border-radius:30px;
-  color:#f3d9a8;
-}
-
-.container {
-  max-width:1080px;
-  margin:auto;
-  padding:76px 22px;
-}
-
-.section-head {
-  margin-bottom:30px;
-}
-
-.section-head .eyebrow {
-  color:#a77c36;
-  letter-spacing:2px;
-}
-
-.section-head h2 {
-  color:var(--navy);
-  font-size:clamp(1.8rem,4vw,2.5rem);
-  margin:3px 0 8px;
-}
-
-.section-head p {
-  color:var(--muted);
-}
-
-.grid {
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:22px;
-}
-
-.card {
-  background:white;
-  border-radius:18px;
-  padding:25px;
-  box-shadow:var(--shadow);
-  border:1px solid #ece8df;
-}
-
-.card h3 {
-  color:var(--blue);
-  margin:0 0 12px;
-}
-
-.profile-list {
-  display:grid;
-  grid-template-columns:130px 1fr;
-  gap:7px 12px;
-}
-
-.profile-list dt {
-  color:var(--muted);
-}
-
-.profile-list dd {
-  margin:0;
-  font-weight:500;
-}
-
-.quote {
-  background:var(--navy);
-  color:white;
-  border-left:5px solid var(--gold);
-  border-radius:16px;
-  padding:25px 28px;
-  font-size:1.2rem;
-}
-
-.quote strong {
-  color:#f0cf91;
-}
-
-.timeline {
-  position:relative;
-  margin-left:10px;
-  padding-left:28px;
-  border-left:2px solid #d9c49e;
-}
-
-.timeline-item {
-  position:relative;
-  margin:0 0 22px;
-}
-
-.timeline-item:before {
-  content:"";
-  position:absolute;
-  left:-36px;
-  top:8px;
-  width:14px;
-  height:14px;
-  border-radius:50%;
-  background:var(--gold);
-  border:3px solid var(--cream);
-}
-
-.timeline-item h3 {
-  margin:0;
-  color:var(--blue);
-}
-
-.timeline-item p {
-  margin:3px 0 0;
-  color:var(--muted);
-}
-
-/* ปรับแต่งการแสดงผลส่วนกิจกรรมและการใส่รูปภาพ */
-.activity-grid {
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:22px;
-}
-
-.activity {
-  background:white;
-  padding:0;
-  border-radius:16px;
-  box-shadow:var(--shadow);
-  border-top:3px solid var(--gold);
-  overflow:hidden;
-  display:flex;
-  flex-direction:column;
-}
-
-.activity-img {
-  width:100%;
-  height:200px;
-  object-fit:cover;
-}
-
-.activity-body {
-  padding:22px;
-  flex-grow:1;
-}
-
-.activity .number {
-  color:#a77c36;
-  font:600 1rem "Kanit";
-}
-
-.activity h3 {
-  margin:4px 0 8px;
-  color:var(--navy);
-  font-size:1.1rem;
-}
-
-.activity p {
-  margin:0;
-  color:var(--muted);
-  font-size:0.95rem;
-}
-
-/* Footer Section */
-footer {
-  background:var(--navy);
-  color:white;
-  padding:50px 22px;
-  text-align:center;
-}
-
-footer p {
-  margin:5px 0;
-  color:#a0aec0;
-}
-
-/* Responsive Support */
-@media (max-width: 768px) {
-  .grid, .activity-grid {
-    grid-template-columns: 1fr;
-  }
+@media(max-width:600px){
+nav{gap:15px}
+main{padding:20px 14px}
+.card{padding:18px}
 }
 </style>
 </head>
+
 <body>
 
-  <!-- Navigation -->
-  <nav class="nav">
-    <div class="nav-inner">
-      <div class="brand">ANUWAT PORTFOLIO</div>
-      <div class="nav-links">
-        <a href="#about">เกี่ยวกับฉัน</a>
-        <a href="#education">การศึกษา</a>
-        <a href="#activities">กิจกรรม</a>
-        <a href="#contact">ติดต่อ</a>
-      </div>
-    </div>
-  </nav>
+<header>
+<nav>
+<a href="#home">หน้าแรก</a>
+<a href="#story">แรงบันดาลใจ</a>
+<a href="#profile">ประวัติส่วนตัว</a>
+<a href="#education">การศึกษา</a>
+<a href="#activities">กิจกรรม</a>
+<a href="#certificates">เกียรติบัตร</a>
+</nav>
+</header>
 
-  <!-- Hero Section -->
-  <header class="hero">
-    <div class="hero-content">
-      <div class="profile-container">
-        <!-- เปลี่ยน URL รูปโปรไฟล์ของคุณที่นี่ -->
-        <img src="https://via.placeholder.com/160" alt="นายอนุวัฒน์ สุวรรณฤทธิ์" class="profile-img">
-      </div>
-      <div class="eyebrow">PORTFOLIO</div>
-      <h1>นายอนุวัฒน์ สุวรรณฤทธิ์</h1>
-      <p>มุ่งมั่น เรียนรู้ และพัฒนาศักยภาพเพื่อสร้างสรรค์ผลงานอย่างมีคุณภาพ</p>
-      <div class="goal">เป้าหมาย: พัฒนาตนเองอย่างต่อเนื่องสู่ความสำเร็จ</div>
-    </div>
-  </header>
+<!-- หน้าปก -->
+<div class="hero" id="home">
+<div>
+<div class="eyebrow">PERSONAL PORTFOLIO</div>
+<h1>แฟ้มสะสมผลงาน</h1>
+<h2>นายอนุวัฒน์ สุวรรณฤทธิ์</h2>
+<p>ครุศาสตร์ สาขาคณิตศาสตร์</p>
+<p>มหาวิทยาลัยราชภัฏสุราษฎร์ธานี</p>
+</div>
+</div>
 
-  <main class="container">
-    
-    <!-- About Section -->
-    <section id="about" style="margin-bottom: 60px;">
-      <div class="section-head">
-        <div class="eyebrow">ABOUT ME</div>
-        <h2>ข้อมูลส่วนตัว</h2>
-        <p>ประวัติและข้อมูลเบื้องต้นเกี่ยวกับตัวฉัน</p>
-      </div>
+<main>
 
-      <div class="grid">
-        <div class="card">
-          <h3>ประวัติส่วนตัว</h3>
-          <dl class="profile-list">
-            <dt>ชื่อ-นามสกุล:</dt>
-            <dd>นายอนุวัฒน์ สุวรรณฤทธิ์</dd>
-            <dt>ชื่อเล่น:</dt>
-            <dd>-[ระบุชื่อเล่น]-</dd>
-            <dt>วันเกิด:</dt>
-            <dd>-[ระบุวันเกิด]-</dd>
-            <dt>สัญชาติ/เชื้อชาติ:</dt>
-            <dd>ไทย / ไทย</dd>
-          </dl>
-        </div>
+<!-- คำนำ -->
+<section id="story">
+<h2>คำนำและแรงบันดาลใจ</h2>
 
-        <div class="card">
-          <h3>ทักษะและความสามารถ</h3>
-          <p>• ความสามารถในการแก้ไขปัญหาและคิดวิเคราะห์</p>
-          <p>• การทำงานร่วมกับผู้อื่นและการสื่อสาร</p>
-          <p>• การปรับตัวและเรียนรู้สิ่งใหม่ๆ ได้อย่างรวดเร็ว</p>
-        </div>
-      </div>
-    </section>
+<div class="card">
+<p>
+แฟ้มสะสมผลงานนี้ ข้าพเจ้าจัดทำขึ้นเพื่อเป็นตัวแทนเสนอเอกสารข้อมูล
+เกี่ยวกับประวัติส่วนตัว ประวัติการศึกษา ความรู้ ความสามารถ ทักษะ
+และความสนใจพิเศษ รวมทั้งเกียรติบัตร ตลอดจนพัฒนาการทางด้านต่างๆ
+ของข้าพเจ้า
+</p>
 
-    <!-- Education Section -->
-    <section id="education" style="margin-bottom: 60px;">
-      <div class="section-head">
-        <div class="eyebrow">EDUCATION</div>
-        <h2>ประวัติการศึกษา</h2>
-      </div>
+<p>
+ข้าพเจ้าหวังว่าแฟ้มสะสมผลงานฉบับนี้จะทำให้ทุกท่านที่อ่าน
+ได้เห็นคุณค่าและความสามารถโดยรวมของข้าพเจ้า
+ขอขอบคุณคุณครูผู้ซึ่งให้คำแนะนำในการรวบรวมเอกสาร
+หลักฐานและข้อมูลต่างๆ
+</p>
 
-      <div class="card">
-        <div class="timeline">
-          <div class="timeline-item">
-            <h3>ระดับการศึกษาสูงสุด / ปัจจุบัน</h3>
-            <p>ชื่อสถานศึกษา | คณะ/สาขาวิชา (ปีการศึกษา)</p>
-          </div>
-          <div class="timeline-item">
-            <h3>ระดับมัธยมศึกษา</h3>
-            <p>ชื่อโรงเรียน | สายการเรียน (ปีการศึกษา)</p>
-          </div>
-        </div>
-      </div>
-    </section>
+<p>นายอนุวัฒน์ สุวรรณฤทธิ์</p>
+</div>
 
-    <!-- Activities & Gallery Section -->
-    <section id="activities">
-      <div class="section-head">
-        <div class="eyebrow">ACTIVITIES & PROJECTS</div>
-        <h2>กิจกรรมและผลงาน</h2>
-        <p>กิจกรรมที่เคยเข้าร่วมและผลงานที่ภาคภูมิใจ</p>
-      </div>
+<div class="card">
+<h3>แรงบันดาลใจในการเป็นครู</h3>
 
-      <div class="activity-grid">
-        <!-- กิจกรรมที่ 1 -->
-        <div class="activity">
-          <!-- เปลี่ยน src รูปภาพกิจกรรมที่ 1 ที่นี่ -->
-          <img src="https://via.placeholder.com/600x400" alt="กิจกรรมที่ 1" class="activity-img">
-          <div class="activity-body">
-            <div class="number">ACTIVITY 01</div>
-            <h3>ชื่อกิจกรรมหรือโครงการที่ 1</h3>
-            <p>รายละเอียดกิจกรรม สรุปบทบาทหน้าที่ และสิ่งที่ได้เรียนรู้จากการเข้าร่วมกิจกรรมนี้</p>
-          </div>
-        </div>
+<p>
+ในวัยเด็ก เรามักจะถูกถามว่า "โตขึ้นอยากเป็นอะไร"
+คำตอบที่กระผมยึดมั่นมาตลอดคือ "โตขึ้นอยากเป็นครู"
+และจนถึงวันนี้ความฝันนั้นก็ยังไม่เคยเปลี่ยนไป
+</p>
 
-        <!-- กิจกรรมที่ 2 -->
-        <div class="activity">
-          <!-- เปลี่ยน src รูปภาพกิจกรรมที่ 2 ที่นี่ -->
-          <img src="https://via.placeholder.com/600x400" alt="กิจกรรมที่ 2" class="activity-img">
-          <div class="activity-body">
-            <div class="number">ACTIVITY 02</div>
-            <h3>ชื่อกิจกรรมหรือโครงการที่ 2</h3>
-            <p>รายละเอียดกิจกรรม สรุปบทบาทหน้าที่ และสิ่งที่ได้เรียนรู้จากการเข้าร่วมกิจกรรมนี้</p>
-          </div>
-        </div>
-      </div>
-    </section>
+<p>
+กระผมค้นพบความชอบในวิชาคณิตศาสตร์ตั้งแต่ระดับชั้นประถมศึกษา
+และเคยได้รับการคัดเลือกแข่งขันคณิตคิดเลขเร็วหลายครั้ง
+จึงเลือกเรียนต่อในสายวิทย์-คณิต
+</p>
 
-  </main>
+<p>
+แรงบันดาลใจที่ยิ่งใหญ่ของกระผมคือ "แม่" ซึ่งเคยเป็นครู
+กระผมได้เห็นการทำงานของท่านและเห็นว่าครูสามารถให้กำลังใจ
+และสร้างความสุขให้กับนักเรียนได้
+</p>
 
-  <!-- Footer / Contact -->
-  <footer id="contact">
-    <h3>ช่องทางการติดต่อ</h3>
-    <p>อีเมล: example@email.com | เบอร์โทรศัพท์: 08X-XXX-XXXX</p>
-    <p style="margin-top:20px; font-size: 0.85rem; opacity: 0.7;">&copy; 2026 นายอนุวัฒน์ สุวรรณฤทธิ์. All Rights Reserved.</p>
-  </footer>
+<p>
+เป้าหมายของกระผมคือ "การสร้างคน"
+อยากส่งต่อความรู้ควบคู่กับคุณธรรม
+และเป็นครูที่ช่วยให้นักเรียนค้นพบความสามารถของตนเอง
+</p>
+
+<p>
+กระผมตั้งใจแน่วแน่ว่า "สักวันหนึ่งผมต้องได้เป็นครู"
+</p>
+</div>
+</section>
+
+<!-- ประวัติส่วนตัว -->
+<section id="profile">
+<h2>01 · ประวัติส่วนตัว</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>ข้อมูลส่วนตัว</h3>
+<p>ชื่อภาษาไทย : นายอนุวัฒน์ สุวรรณฤทธิ์</p>
+<p>ชื่อภาษาอังกฤษ : Anuwat Suwanrit</p>
+<p>ชื่อเล่น : อ๊อฟ</p>
+<p>เชื้อชาติ : ไทย</p>
+<p>สัญชาติ : ไทย</p>
+<p>ศาสนา : พุทธ</p>
+<p>วันเกิด : 21 ธันวาคม 2551</p>
+<p>การศึกษา : วิทยาศาสตร์-คณิตศาสตร์</p>
+<p>คติประจำใจ : ทำวันนี้ให้ดีที่สุด</p>
+</div>
+
+<div class="card">
+<h3>ข้อมูลครอบครัว</h3>
+<p>ชื่อบิดา : นายศรีพงศ์ สุวรรณฤทธิ์</p>
+<p>อาชีพ : ทำสวน</p>
+<p>ชื่อมารดา : นางจิราภรณ์ สุวรรณฤทธิ์</p>
+<p>อาชีพ : รับราชการ นักวิชาการศึกษา</p>
+</div>
+
+<div class="card">
+<h3>ช่องทางการติดต่อ</h3>
+<p>Facebook : Aof Anuwat Anuwat</p>
+<p>โทรศัพท์ : 084-4455759</p>
+<p>โทรศัพท์ : 082-5935890</p>
+<p>Email : aof9452aa@gmail.com</p>
+</div>
+
+</div>
+</section>
+
+<!-- ประวัติการศึกษา -->
+<section id="education">
+<h2>02 · ประวัติการศึกษา</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>ระดับชั้นอนุบาลศึกษา</h3>
+<p>โรงเรียนบ้านควนสินชัย</p>
+</div>
+
+<div class="card">
+<h3>ระดับชั้นประถมศึกษา</h3>
+<p>โรงเรียนบ้านบางรูป</p>
+</div>
+
+<div class="card">
+<h3>ระดับชั้นมัธยมศึกษาตอนต้น</h3>
+<p>โรงเรียนทุ่งใหญ่เฉลิมราชอนุสรณ์ รัชมังคลาภิเษก</p>
+</div>
+
+<div class="card">
+<h3>ระดับชั้นมัธยมศึกษาตอนปลาย</h3>
+<p>โรงเรียนทุ่งใหญ่เฉลิมราชอนุสรณ์ รัชมังคลาภิเษก</p>
+<p>ผลการเรียนเฉลี่ย : 3.41</p>
+<p>4 ภาคเรียน</p>
+</div>
+
+<div class="card">
+<h3>ผลการเรียน</h3>
+<p>ผลการเรียนเฉลี่ยตลอดหลักสูตร : 3.41</p>
+<p>Transcript</p>
+</div>
+
+</div>
+</section>
+
+<!-- กิจกรรม -->
+<section id="activities">
+<h2>03 · กิจกรรมที่เข้าร่วม</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>กิจกรรมที่ 01</h3>
+<p>กิจกรรมจิตอาสาปลูกป่าชายเลนเพื่ออนุรักษ์สิ่งแวดล้อมชายฝั่ง</p>
+<p>ได้รับความสามัคคีในการทำกิจกรรมกับเพื่อน
+และมีส่วนร่วมในการอนุรักษ์สิ่งแวดล้อม</p>
+</div>
+
+<div class="card">
+<h3>กิจกรรมที่ 02</h3>
+<p>ได้รับคัดเลือกเป็นตัวแทนชั้น ม.5/1
+ถือพานวันไหว้ครู ปีการศึกษา 2568</p>
+</div>
+
+<div class="card">
+<h3>กิจกรรมที่ 03</h3>
+<p>ได้รับคัดเลือกเป็นตัวแทนนักเรียนฝ่ายต้อนรับ
+คณะกรรมการนิเทศ ติดตาม และประเมินการดำเนินงานตามเกณฑ์ OBECQA</p>
+</div>
+
+<div class="card">
+<h3>กิจกรรมที่ 04</h3>
+<p>ได้รับการคัดเลือกเป็นตัวแทนนักเรียนตำบลทุ่งใหญ่
+ในการถือเครื่องสูงการแข่งขันกีฬาอำเภอทุ่งใหญ่เกมส์ ประจำปี 2568</p>
+</div>
+
+<div class="card">
+<h3>กิจกรรมที่ 05</h3>
+<p>กิจกรรม ASEAN DAY</p>
+<p>ได้รับรางวัลรองชนะเลิศอันดับ 1
+จากการประกวดการแต่งกายด้วยชุดอาเซียน</p>
+</div>
+
+<div class="card">
+<h3>กิจกรรมที่ 06</h3>
+<p>กิจกรรม T.H.R. NEWYEAR CUP 2026</p>
+<p>แข่งขันกีฬาฟุตซอล 5 คน ระดับชั้นมัธยมศึกษาตอนปลาย
+ได้รับรางวัลรองชนะเลิศอันดับ 2</p>
+</div>
+
+<div class="card">
+<h3>กิจกรรมที่ 07</h3>
+<p>ได้รับคัดเลือกเป็นตัวแทนนักเรียนวางพานพุ่ม
+ในพิธีสำคัญของโรงเรียนและวันสำคัญต่างๆ</p>
+</div>
+
+<div class="card">
+<h3>กิจกรรมที่ 08</h3>
+<p>การแข่งขันตอบคำถามเนื่องในวันสถาปนาโรงเรียน
+ได้รับรางวัลรองชนะเลิศอันดับ 1</p>
+</div>
+
+<div class="card">
+<h3>กิจกรรมที่ 09</h3>
+<p>กิจกรรมจิตอาสาทำความสะอาดวัด
+ปลูกฝังจิตสำนึกสาธารณะ ความเสียสละ
+และการทำงานร่วมกันเป็นทีม</p>
+</div>
+
+<div class="card">
+<h3>กิจกรรมที่ 10</h3>
+<p>ได้รับมอบหมายให้เป็นตัวแทนนักเรียนเป็นพี่แนะแนว
+ให้กับน้องๆ โรงเรียนบ้านบางรูป
+เพื่อแนะนำการศึกษาต่อและการเตรียมตัวสอบเข้า</p>
+</div>
+
+</div>
+</section>
+
+<!-- เกียรติบัตร -->
+<section id="certificates">
+<h2>04 · เกียรติบัตรที่ได้รับ</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>เกียรติบัตร 01</h3>
+<p>เข้าร่วมกิจกรรมค่ายคุณธรรม จริยธรรม นักเรียน
+ประจำปีการศึกษา 2567</p>
+<p>วันที่ 13-14 พฤษภาคม 2567</p>
+</div>
+
+<div class="card">
+<h3>เกียรติบัตร 02</h3>
+<p>ได้รับรางวัลระดับเหรียญทอง ชนะเลิศ
+การแข่งขันเครื่องร่อนกระดาษพับประเภทบินนาน
+ระดับชั้น ม.1-ม.3</p>
+</div>
+
+<div class="card">
+<h3>เกียรติบัตร 03</h3>
+<p>ได้รับคัดเลือกเป็นตัวแทนแข่งขันคณิตคิดเลขเร็ว
+ตั้งแต่ระดับประถมศึกษาปีที่ 3-6</p>
+</div>
+
+<div class="card">
+<h3>เกียรติบัตร 04</h3>
+<p>เข้าร่วมแข่งขันจรวดขวดน้ำ
+งานศิลปหัตถกรรมนักเรียน ครั้งที่ 73</p>
+</div>
+
+<div class="card">
+<h3>เกียรติบัตร 05</h3>
+<p>เข้าร่วมแข่งขันกีฬา THR RoV E-Sports
+ได้รับรางวัลรองชนะเลิศอันดับ 2</p>
+</div>
+
+<div class="card">
+<h3>เกียรติบัตร 06</h3>
+<p>เข้าร่วมกิจกรรมสัปดาห์วันวิทยาศาสตร์แห่งชาติ 2568
+(Science-Tech Week 2025)</p>
+</div>
+
+<div class="card">
+<h3>เกียรติบัตร 07</h3>
+<p>เป็นตัวแทนนักเรียนเข้าร่วมแข่งขันจรวดขวดน้ำระดับประเทศ
+ครั้งที่ 24 รอบคัดเลือก</p>
+</div>
+
+<div class="card">
+<h3>เกียรติบัตร 08</h3>
+<p>ได้รับคัดเลือกเป็นตัวแทนเข้ารับการอบรมด้านการเกษตร
+ตามโครงการคลินิกเกษตรเคลื่อนที่ในพระราชานุเคราะห์</p>
+</div>
+
+</div>
+</section>
+
+</main>
+
+<!-- ส่วนท้าย -->
+<footer>
+<h2 style="color:white">THANK YOU</h2>
+<p>ขอบคุณที่พิจารณา</p>
+<p>คติประจำใจ : ผมต้องได้เป็น "ครู"</p>
+<p>นายอนุวัฒน์ สุวรรณฤทธิ์</p>
+</footer>
 
 </body>
 </html>
